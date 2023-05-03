@@ -1,0 +1,62 @@
+/*-------------PLANES-------------*/
+.plan {
+    display: grid;
+
+        &__h1{
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        &__div{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 1.5rem;
+            padding: 2rem;
+        }
+        &__box{
+            display: grid;
+            grid-template-rows: 1fr 1fr 3fr 1fr;
+            justify-content: center;
+            max-height: 47rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            background-color: #fcf6f6;
+            border: 2px solid #4cacd882;
+            border-radius: 0.5rem;
+            padding: 10px;
+                
+                &--h2{
+                    text-align: center;
+                    font-weight: bold;
+                }
+                &--ul{
+                    list-style-type: none;
+                    padding-left: 0rem;
+                }
+                &--li{
+                    text-align: center;
+                    padding: 11px 10px;
+                    display: block;
+                    margin: 0;
+                    border-bottom: 1px solid rgba(0,0,0,0.1);
+                }
+                &--button{
+                    box-sizing: border-box;
+                    list-style: none; 
+                    align-self: end;
+                    font-weight: bold;
+                    padding: 0.6rem 2.5rem 0.6rem 2.5rem ;
+                    border-radius: 1rem;
+                }      
+        }
+         
+}
+.logo_wifi{
+    height: 14rem;
+    margin-bottom: 3rem ;
+}
+.wifi_rosa{
+    filter: hue-rotate(120deg)
+}
+.wifi_verde{
+    filter: hue-rotate(290deg)
+}

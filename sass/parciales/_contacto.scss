@@ -1,0 +1,25 @@
+/*-------------CONTACTO-------------*/
+.mapa{
+    width:1300px; 
+    height:450px;
+    border: 0;
+}
+.contacto{
+    display: grid;
+    padding: 1rem;
+    margin: 1rem;
+    grid-template-columns: 3fr 1fr;
+
+        &__formulario{
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+        &__mapa{
+            margin-right: 2rem;
+            width:600px; 
+            height:400px;
+            border: 0;
+    
+        }
+}

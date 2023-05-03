@@ -1,0 +1,82 @@
+/*-------------SECTION INDEX-------------*/
+.index{
+    overflow: hidden;
+
+}
+.section{
+    display: grid;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    height: 72vh;
+    padding: 1rem 2rem ;
+
+        &__imagen1{
+            background-image: url(../img/index_internet2.jpg);
+            box-sizing: border-box;
+            grid-template-columns:$areasection;
+            grid-template-areas: 
+            "h3 button p1"
+        }
+        &__imagen2{
+            background-image: url(../img/index_servicios.jpg);
+            box-sizing: border-box;
+            grid-template-columns:$areasection;
+            grid-template-areas: 
+            "p1 button h3"
+        }
+        &__button{
+            display: flex;
+            margin: 2rem ;
+            padding: 1rem;
+            border: 0.1rem solid black;
+            width: 10rem;
+            text-align: center;
+            justify-content: center;
+            background-color:$celestebtn;
+            grid-area: button;
+            align-self: end;
+            border-radius: 1rem;
+            transition-duration: 0.4s;
+                &:hover {
+                     background-color: #2cd7ee; /* Green */
+                     color: white;
+                }
+        }
+        &__p{
+            grid-area: p1;
+            background-color: #ffffff85;
+            padding: 1rem 2rem;
+            align-self: center;
+            text-align: justify;
+            line-height: 1.4rem;
+        }
+
+        &__info{
+            display: grid;
+            margin: 1rem 1rem 0rem 1rem;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            padding: 2rem; 
+        
+                &--p{
+                    padding: 2rem;
+                    text-align: center;
+                    font-size: calc(0.6rem + 1vw);
+                }
+                &--mapa{
+                    width:600px; 
+                    height:400px;
+                    border: 0;
+                }
+        }
+        
+}
+.imagen__h3{
+    grid-area: h3;
+    font-size: 3.5rem;
+    align-self: center;
+    background-color: #ffffff3b;
+    text-align: center;
+}

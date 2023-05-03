@@ -1,0 +1,52 @@
+/*-------------Header-------------*/
+.header{
+    display: flex;
+    flex-direction: column;
+
+        &__top{
+            background-color: rgb(24, 146, 202);
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        &__p {
+            display: flex;
+            align-items: center;
+            font-family: monospace;
+            color: white;
+            font-size: 1rem;
+            padding-left: 1rem;
+             
+        }
+        &__icons{
+            box-sizing: 1rem;
+
+        }
+        &__ul{
+            display: flex;
+            background-color: rgb(76, 172, 216);
+            margin-bottom: 2rem;
+        }
+}
+.logo{
+    display: flex;
+    justify-content: center;
+
+        &__img{ 
+             width: 10rem;
+             height: 10rem; 
+        }
+}
+.button{
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+    list-style: none;
+    font-weight: bold;
+    padding: 0.6rem 2.5rem 0.6rem 2.5rem ;
+
+        &__select{
+             color:#ffffff
+        }
+}

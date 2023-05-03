@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página líder en servicios de internet y tecnología. Soluciones personalizadas y artículos de computación de alta calidad.">
+    <meta name="keywords"  content="servicios de internet, alta velocidad, tecnología, experiencia en línea, artículos de computación, alta calidad.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--logo-->
+    <link rel="icon" type="image/png" href="./img/logo_blanco.png">
+    <!--AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--BOOTSTRAP CSS-->
+    <link href="./bootstrap/css/bootstrap.min.css"" rel="stylesheet">
+    <!--CSS-->
+    <!--CSS DE RESPALDO-->
+    <!--<link rel="stylesheet" href="./css/style.css">-->
+    <link rel="stylesheet" href="./css/compilado.css">
+    <title>Sicnet</title>
+</head>
+<body>
+    <div class="div__god">
+        <!--Header   -->
+        <header class="header">
+            <div class="header__top">
+                <p class="header__p">
+                        Internet para estar conectados
+                </p>
+                <div class="header__icons">
+                    <a href="https://www.instagram.com/gaming.sic/">
+                        <img src="./img/instagram_icon.png" alt="Instagram">
+                    </a>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fbit.ly%2F3v3gNp9&e=AT2VU9DSQVv2HNPF6g0ZYBiWr320ba9g0bbVPCKFvmetRv9bX3qaw1q4l4MZYQtNS95qghQY4onc1sKV6Kf57YMNQ11KurawcOJv8w">
+                        <img src="./img/whatsapp_icon.png" alt="Whatsapp">
+                    </a>
+                    <a href="https://www.facebook.com/SICCOMPUTACION">
+                        <img src="./img/facebook_icon.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+            <div class='logo'>
+                <a href="index.html">
+                    <img class="logo__img" src="./img/logo_blanco.png" alt="LOGO">  
+                </a>
+            </div>
+            <nav>
+                <ul class="header__ul button">
+                    <li class="button__li"><a class="button__select" href="index.html">Inicio</a></li>
+                    <li class="button__li"><a href="./servicios/internet.html">Internet</a></li>
+                    <li class="button__li"><a href="./servicios/gaming.html">Gaming</a></li>
+                    <li class="button__li"><a href="./sicnet/nosotros.html">Nosotros</a></li>
+                    <li class="button__li"><a href="./sicnet/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-lg-3">
+          <h2>Filtros</h2>
+          <hr>
+          <form>
+            <div class="form-group">
+              <label for="producto">Producto</label>
+              <select class="form-control" id="producto">
+                <option>Microprocesador</option>
+                <option>Memoria RAM</option>
+                <option>Motherboard</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price-range">Rango de precio:</label>
+              <input type="range" class="form-control-range" id="price-range" min="0" max="100" step="1">
+              <output id="price-output">0</output>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+          </form>
+        </aside>
+        <section class="col-lg-9">
+          <h1>Productos</h1>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Repetir este bloque para cada producto -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section class="col-lg-9">
+          <h1>Productos</h1>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Repetir este bloque para cada producto -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section class="col-lg-9">
+          <h1>Productos</h1>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <!-- Repetir este bloque para cada producto -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Producto 1">
+                <div class="card-body">
+                  <h5 class="card-title">Microprocesador 1</h5>
+                  <p class="card-text">Descripción del producto.</p>
+                  <p class="card-text">Precio: $1000</p>
+                  <button class="btn btn-primary">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="footer__p">
+    Copyright 2022 © SICnet.<br>
+    Diseño Web: Rodolfo Garavano.<br>
+    Todos los derechos reservados.
+    </p>
+</footer>
+  <script src="./js/index.js"></script>
+</body>
