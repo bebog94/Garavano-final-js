@@ -4,3 +4,5 @@ const priceOutput = document.getElementById("price-output");
 priceRange.addEventListener("input", function() {
   priceOutput.textContent = priceRange.value;
 });
+
+

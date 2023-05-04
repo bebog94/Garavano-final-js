@@ -36,18 +36,17 @@ P {
     padding-left: 1rem; }
   .header__icons {
     box-sizing: 1rem; }
-  .header__ul {
-    display: flex;
+  .header__nav {
     background-color: #4cacd8;
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+    text-align: center; 
+    }
 
 .logo {
   display: flex;
   justify-content: center; }
   .logo__img {
-    width: 10rem;
-    height: 10rem; }
-
+    width: 10rem; }
 .button {
   flex-wrap: nowrap;
   box-sizing: border-box;
