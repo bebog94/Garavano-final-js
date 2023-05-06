@@ -266,6 +266,15 @@ P {
   .plan__box {
     padding: 0.4rem; } }
 
+
+  /*E-COMMERCE*/
+  
+    .card__img{
+      width: 200px;
+      height: 200px;
+    }
+    
+
 @media screen and (max-width: 425px) {
   /*Header*/
   .header__p {
