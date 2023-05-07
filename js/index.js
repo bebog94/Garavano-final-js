@@ -1,11 +1,3 @@
-const priceRange = document.getElementById("price-range");
-const priceOutput = document.getElementById("price-output");
-
-priceRange.addEventListener("input", function() {
-  priceOutput.textContent = priceRange.value;
-});
-
-
 
 const productosStock = [
   {
@@ -94,13 +86,13 @@ const productosStock = [
   },
 ];
 
+// Cargamos todos los productos mediante js
+
+
 const contenedor = document.getElementById("contenedor-productos");
-/* let contador = 0; */
-
-
 
 function cargarProductos(){
-
+  contenedor.innerHTML = ""; // Eliminar productos actuales
 productosStock.forEach(producto => {
   const div = document.createElement("div");
   div.classList.add("col-md-4");
@@ -113,63 +105,41 @@ productosStock.forEach(producto => {
       <button class="btn btn-primary" id="${producto.id}">Agregar al carrito</button>
     </div>
     </div>`;
- /*  if (contador % 3 === 0) {
-    div.innerHTML = `<br>`
-  } */
   contenedor.appendChild(div);
-/*   contador++; */
 });
 }
 cargarProductos();
 
 
-/* const productosSection = document.querySelector('#productos-section');
-const productosContainer = document.querySelector('#productos-container');
+// Mostramos el valor en la barra del rango de precios
 
-productosStock.forEach(producto => {
-  const cardCol = document.createElement('div');
-  cardCol.classList.add('col-md-4');
+const priceRange = document.getElementById("price-range");
+const priceOutput = document.getElementById("price-output");
 
-  const card = document.createElement('div');
-  card.classList.add('card');
-
-  const cardImg = document.createElement('img');
-  cardImg.src = producto.imagen;
-  cardImg.classList.add('card-img-top');
-  cardImg.alt = producto.titulo;
-
-  const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
-
-  const cardTitle = document.createElement('h5');
-  cardTitle.classList.add('card-title');
-  cardTitle.textContent = producto.titulo;
-
-  const cardDesc = document.createElement('p');
-  cardDesc.classList.add('card-text');
-  cardDesc.textContent = producto.descripcion;
-
-  const cardPrecio = document.createElement('p');
-  cardPrecio.classList.add('card-text');
-  cardPrecio.textContent = `Precio: $${producto.precio}`;
-
-  const btnAgregar = document.createElement('button');
-  btnAgregar.classList.add('btn', 'btn-primary');
-  btnAgregar.textContent = 'Agregar al carrito';
-
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardDesc);
-  cardBody.appendChild(cardPrecio);
-  cardBody.appendChild(btnAgregar);
-
-  card.appendChild(cardImg);
-  card.appendChild(cardBody);
-
-  cardCol.appendChild(card);
-
-  productosContainer.appendChild(cardCol);
+priceRange.addEventListener("input", function() {
+  priceOutput.textContent = priceRange.value;
 });
 
-productosSection.appendChild(productosContainer); */
+
+function filtrarPorProducto() {
+  const tipoProducto = document.getElementById("producto").value;
+  if (tipoProducto==="Todos"){
+    cargarProductos(productosStock);
+  } else {
+    const prodcutosFiltrados = productosStock.filter(producto => producto.tipo === tipoProducto);
+    cargarProductos(prodcutosFiltrados);
+  }
+}
+
+document.getElementById("producto").addEventListener("change", function(e){
+  e.preventDefault();
+  filtrarPorProducto();
+});
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  filtrarPorProducto();
+});
+
+cargarProductos(productosStock);
 
 
