@@ -91,24 +91,26 @@ const productosStock = [
 
 const contenedor = document.getElementById("contenedor-productos");
 
-function cargarProductos(){
+function cargarProductos(productos){
   contenedor.innerHTML = ""; // Eliminar productos actuales
-productosStock.forEach(producto => {
-  const div = document.createElement("div");
-  div.classList.add("col-md-4");
-  div.innerHTML = `
-  <div class="card">
-  <img class="card-img-top card__img" src="${producto.imagen}" alt="${producto.titulo}">
-    <div class="card-body">
-      <h5 class="card-title">${producto.titulo}</h5>
-      <p class="card-text">$${producto.precio}</p>
-      <button class="btn btn-primary" id="${producto.id}">Agregar al carrito</button>
-    </div>
-    </div>`;
-  contenedor.appendChild(div);
-});
+  productos.forEach(producto => {
+    const div = document.createElement("div");
+    div.classList.add("col-md-4");
+    div.innerHTML = `
+      <div class="card">
+        <img class="card-img-top card__img" src="${producto.imagen}" alt="${producto.titulo}">
+        <div class="card-body">
+          <h5 class="card-title">${producto.titulo}</h5>
+          <p class="card-text">$${producto.precio}</p>
+          <button class="btn btn-primary" id="${producto.id}">Agregar al carrito</button>
+        </div>
+      </div>`;
+    contenedor.appendChild(div);
+  });
 }
-cargarProductos();
+
+//Mostrar los productos
+cargarProductos(productosStock);
 
 
 // Mostramos el valor en la barra del rango de precios
@@ -120,17 +122,6 @@ priceRange.addEventListener("input", function() {
   priceOutput.textContent = priceRange.value;
 });
 
-
-function filtrarPorProducto() {
-  const tipoProducto = document.getElementById("producto").value;
-  if (tipoProducto==="Todos"){
-    cargarProductos(productosStock);
-  } else {
-    const prodcutosFiltrados = productosStock.filter(producto => producto.tipo === tipoProducto);
-    cargarProductos(prodcutosFiltrados);
-  }
-}
-
 document.getElementById("producto").addEventListener("change", function(e){
   e.preventDefault();
   filtrarPorProducto();
@@ -140,6 +131,15 @@ document.querySelector("form").addEventListener("submit", function(e) {
   filtrarPorProducto();
 });
 
-cargarProductos(productosStock);
+function filtrarPorProducto() {
+  const tipoProducto = document.getElementById("producto").value;
+  if (tipoProducto==="Todos"){
+    cargarProductos(productosStock);
+  } else {
+    const productosFiltrados = productosStock.filter(producto => producto.producto === tipoProducto);
+    cargarProductos(productosFiltrados);
+  }
+}
+
 
 
