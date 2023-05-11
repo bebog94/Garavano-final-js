@@ -118,14 +118,14 @@ cargarProductos(productosStock);
 const priceRange = document.getElementById("price-range");
 const priceOutput = document.getElementById("price-output");
 
+//Mostramos los valores en pesos
 priceRange.addEventListener("input", function() {
-  priceOutput.textContent = priceRange.value;
+  priceOutput.textContent = "$" + Number(priceRange.value).toLocaleString('es');
 });
 
-document.getElementById("producto").addEventListener("change", function(e){
-  e.preventDefault();
-  filtrarPorProducto();
-});
+
+// Filtramos por producto
+
 document.querySelector("form").addEventListener("submit", function(e) {
   e.preventDefault();
   filtrarPorProducto();
@@ -140,4 +140,6 @@ function filtrarPorProducto() {
     cargarProductos(productosFiltrados);
   }
 }
+
+
 
