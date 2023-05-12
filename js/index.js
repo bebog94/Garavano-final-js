@@ -86,6 +86,13 @@ const productosStock = [
   },
 ];
 
+
+
+let botonesAgregar = document.querySelectorAll(".producto-agregar")
+
+
+
+
 // Cargamos todos los productos mediante js
 
 
@@ -102,11 +109,12 @@ function cargarProductos(productos){
         <div class="card-body">
           <h5 class="card-title">${producto.titulo}</h5>
           <p class="card-text">$${producto.precio}</p>
-          <button class="btn btn-primary" id="${producto.id}">Agregar al carrito</button>
+          <button class="btn btn-primary producto-agregar" id="${producto.id}">Agregar al carrito</button>
         </div>
       </div>`;
     contenedor.appendChild(div);
   });
+  actualizarBotonesAgregar();
 }
 
 //Mostrar los productos
@@ -119,12 +127,15 @@ const priceRange = document.getElementById("price-range");
 const priceOutput = document.getElementById("price-output");
 
 //Mostramos los valores en pesos
+
+
 priceRange.addEventListener("input", function() {
   priceOutput.textContent = "$" + Number(priceRange.value).toLocaleString('es');
 });
 
 
 // Filtramos por producto
+
 
 document.querySelector("form").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -139,7 +150,24 @@ function filtrarPorProducto() {
     const productosFiltrados = productosStock.filter(producto => producto.producto === tipoProducto);
     cargarProductos(productosFiltrados);
   }
+};
+
+
+//Actualizamos los botones luego de que el dom los cargue
+function actualizarBotonesAgregar(){
+  botonesAgregar = document.querySelectorAll(".producto-agregar")
+
+  botonesAgregar.forEach(boton => {
+    boton.addEventListener("click", agregarAlCarrito)
+  });
 }
 
 
+const productosEnCarrito = [];
 
+function agregarAlCarrito(e){
+
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productosStock.find(producto => producto.id === parseInt(idBoton));
+    console.log(productoAgregado);
+}
