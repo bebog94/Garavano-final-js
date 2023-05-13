@@ -98,7 +98,7 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar")
 
 const contenedor = document.getElementById("contenedor-productos");
 
-function cargarProductos(productos){
+function cargarProductos(productos) {
   contenedor.innerHTML = ""; // Eliminar productos actuales
   productos.forEach(producto => {
     const div = document.createElement("div");
@@ -129,7 +129,7 @@ const priceOutput = document.getElementById("price-output");
 //Mostramos los valores en pesos
 
 
-priceRange.addEventListener("input", function() {
+priceRange.addEventListener("input", function () {
   priceOutput.textContent = "$" + Number(priceRange.value).toLocaleString('es');
 });
 
@@ -137,14 +137,14 @@ priceRange.addEventListener("input", function() {
 // Filtramos por producto
 
 
-document.querySelector("form").addEventListener("submit", function(e) {
+document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
   filtrarPorProducto();
 });
 
 function filtrarPorProducto() {
   const tipoProducto = document.getElementById("producto").value;
-  if (tipoProducto==="Todos"){
+  if (tipoProducto === "Todos") {
     cargarProductos(productosStock);
   } else {
     const productosFiltrados = productosStock.filter(producto => producto.producto === tipoProducto);
@@ -154,7 +154,7 @@ function filtrarPorProducto() {
 
 
 //Actualizamos los botones luego de que el dom los cargue
-function actualizarBotonesAgregar(){
+function actualizarBotonesAgregar() {
   botonesAgregar = document.querySelectorAll(".producto-agregar")
 
   botonesAgregar.forEach(boton => {
@@ -165,9 +165,19 @@ function actualizarBotonesAgregar(){
 
 const productosEnCarrito = [];
 
-function agregarAlCarrito(e){
+function agregarAlCarrito(e) {
 
-    const idBoton = e.currentTarget.id;
-    const productoAgregado = productosStock.find(producto => producto.id === parseInt(idBoton));
-    console.log(productoAgregado);
+  const idBoton = e.currentTarget.id;
+  const productoAgregado = productosStock.find(producto => producto.id === parseInt(idBoton));
+
+  if (productosEnCarrito.some(producto => producto.id === parseInt(idBoton))) {
+
+    productoAgregado.cantidad ++;
+
+  } else{
+
+    productoAgregado.cantidad = 1;
+    productosEnCarrito.push(productoAgregado);
+    
+  }
 }
