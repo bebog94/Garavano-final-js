@@ -37,10 +37,26 @@ P {
   .header__icons {
     box-sizing: 1rem; }
   .header__nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+    grid-template-areas: "h3 h3 h4 h2 h5";
     background-color: #4cacd8;
-    margin-bottom: 2rem;
     text-align: center; 
     }
+  .header__h4 {
+    grid-area: h4;
+    display: grid;
+    align-content: center;
+    align-self: self-end;
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
+  .header__h5{
+    grid-area: h5;
+    align-self: self-end;
+    margin-top: 0.5rem;
+    font-weight: bold;
+  }
 
 .logo {
   display: flex;
@@ -61,6 +77,12 @@ P {
 .index {
   overflow: hidden; }
 
+.div__aside{
+    background-color:#85bafa;
+  }
+.div__productos{
+  margin-top: 2rem;
+}
 .section {
   display: grid;
   background-repeat: no-repeat;
