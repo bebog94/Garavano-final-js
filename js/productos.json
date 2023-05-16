@@ -1,0 +1,86 @@
+[
+    {
+      "id": 0,
+      "titulo": "Intel i7 11700k",
+      "producto": "Microprocesador",
+      "imagen": "./img/micro1.png",
+      "precio": 85000
+    },
+    {
+      "id": 1,
+      "titulo": "AMD Ryzen 9 5900X",
+      "producto": "Microprocesador",
+      "imagen": "./img/micro2.png",
+      "precio": 90000
+    },
+    {
+      "id": 2,
+      "titulo": "Intel Core i9-11900K",
+      "producto": "Microprocesador",
+      "imagen": "./img/micro3.png",
+      "precio": 95000
+    },
+    {
+      "id": 3,
+      "titulo": "AMD Ryzen Threadripper 3990X",
+      "producto": "Microprocesador",
+      "imagen": "./img/micro4.png",
+      "precio": 400000
+    },
+    {
+      "id": 4,
+      "titulo": "ASUS ROG Strix Z590-E",
+      "producto": "Motherboard",
+      "imagen": "./img/mother1.png",
+      "precio": 120000
+    },
+    {
+      "id": 5,
+      "titulo": "Gigabyte X570 AORUS Elite",
+      "producto": "Motherboard",
+      "imagen": "./img/mother2.png",
+      "precio": 80000
+    },
+    {
+      "id": 6,
+      "titulo": "MSI MPG B550 Gaming Carbon WiFi",
+      "producto": "Motherboard",
+      "imagen": "./img/mother3.png",
+      "precio": 95000
+    },
+    {
+      "id": 7,
+      "titulo": "ASRock Z590 Taichi",
+      "producto": "Motherboard",
+      "imagen": "./img/mother4.png",
+      "precio": 125000
+    },
+    {
+      "id": 8,
+      "titulo": "Corsair Vengeance RGB Pro 32GB (2 x 16GB)",
+      "producto": "Memoria RAM",
+      "imagen": "./img/memoria1.png",
+      "precio": 30000
+    },
+    {
+      "id": 9,
+      "titulo": "G.Skill Ripjaws V 16GB (2 x 8GB)",
+      "producto": "Memoria RAM",
+      "imagen": "./img/memoria2.png",
+      "precio": 18000
+    },
+    {
+      "id": 10,
+      "titulo": "HyperX Fury RGB 32GB (2 x 16GB)",
+      "producto": "Memoria RAM",
+      "imagen": "./img/memoria3.png",
+      "precio": 35000
+    },
+    {
+      "id": 11,
+      "titulo": "Team T-Force Night Hawk RGB 16GB (2 x 8GB)",
+      "producto": "Memoria RAM",
+      "imagen": "./img/memoria4.png",
+      "precio": 20000
+    }
+  ]

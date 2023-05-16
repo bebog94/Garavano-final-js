@@ -1,90 +1,11 @@
+let productosStock = [];
 
-const productosStock = [
-  {
-    id: 0,
-    titulo: "Intel i7 11700k",
-    producto: "Microprocesador",
-    imagen: "./img/micro1.png",
-    precio: 85000,
-  },
-  {
-    id: 1,
-    titulo: "AMD Ryzen 9 5900X",
-    producto: "Microprocesador",
-    imagen: "./img/micro2.png",
-    precio: 90000,
-  },
-  {
-    id: 2,
-    titulo: "Intel Core i9-11900K",
-    producto: "Microprocesador",
-    imagen: "./img/micro3.png",
-    precio: 95000,
-  },
-  {
-    id: 3,
-    titulo: "AMD Ryzen Threadripper 3990X",
-    producto: "Microprocesador",
-    imagen: "./img/micro4.png",
-    precio: 400000,
-  },
-  {
-    id: 4,
-    titulo: "ASUS ROG Strix Z590-E",
-    producto: "Motherboard",
-    imagen: "./img/mother1.png",
-    precio: 120000,
-  },
-  {
-    id: 5,
-    titulo: "Gigabyte X570 AORUS Elite",
-    producto: "Motherboard",
-    imagen: "./img/mother2.png",
-    precio: 80000,
-  },
-  {
-    id: 6,
-    titulo: "MSI MPG B550 Gaming Carbon WiFi",
-    producto: "Motherboard",
-    imagen: "./img/mother3.png",
-    precio: 95000,
-  },
-  {
-    id: 7,
-    titulo: "ASRock Z590 Taichi",
-    producto: "Motherboard",
-    imagen: "./img/mother4.png",
-    precio: 125000,
-  },
-  {
-    id: 8,
-    titulo: "Corsair Vengeance RGB Pro 32GB (2 x 16GB)",
-    producto: "Memoria RAM",
-    imagen: "./img/memoria1.png",
-    precio: 30000,
-  },
-  {
-    id: 9,
-    titulo: "G.Skill Ripjaws V 16GB (2 x 8GB)",
-    producto: "Memoria RAM",
-    imagen: "./img/memoria2.png",
-    precio: 18000,
-  },
-  {
-    id: 10,
-    titulo: "HyperX Fury RGB 32GB (2 x 16GB)",
-    producto: "Memoria RAM",
-    imagen: "./img/memoria3.png",
-    precio: 35000,
-  },
-  {
-    id: 11,
-    titulo: "Team T-Force Night Hawk RGB 16GB (2 x 8GB)",
-    producto: "Memoria RAM",
-    imagen: "./img/memoria4.png",
-    precio: 20000,
-  },
-];
+fetch("./js/productos.json")
+      .then(response => response.json())
+      .then(data =>{
+        productosStock = data;
+        cargarProductos(productosStock);
+      })
 
 
 
@@ -97,6 +18,7 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar")
 
 
 const contenedor = document.getElementById("contenedor-productos");
+const numero= document.querySelector(".numero");
 
 function cargarProductos(productos) {
   contenedor.innerHTML = ""; // Eliminar productos actuales
@@ -144,10 +66,13 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
 function filtrarPorProducto() {
   const tipoProducto = document.getElementById("producto").value;
+  const precioSeleccionado = Number(priceRange.value);
+
   if (tipoProducto === "Todos") {
-    cargarProductos(productosStock);
+    const productosFiltrados = productosStock.filter(producto => producto.precio <= precioSeleccionado);
+    cargarProductos(productosFiltrados);
   } else {
-    const productosFiltrados = productosStock.filter(producto => producto.producto === tipoProducto);
+    const productosFiltrados = productosStock.filter(producto => producto.producto === tipoProducto && producto.precio <= precioSeleccionado);
     cargarProductos(productosFiltrados);
   }
 };
@@ -163,11 +88,35 @@ function actualizarBotonesAgregar() {
 }
 
 
-const productosEnCarrito = [];
+let productosEnCarrito;
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
-const numero= document.querySelector(".numero");
+if(productosEnCarritoLS){
+  productosEnCarrito = JSON.parse(productosEnCarritoLS);
+  actualizarNumero();
+}else { 
+  productosEnCarrito = [];
+}
+
 
 function agregarAlCarrito(e) {
+  Toastify({
+    text: "Producto cargado",
+    duration: 3000,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #1892ca, #4cacd8)",
+      textTransform:"uppercase"
+    },
+    offset: {
+    x: "3rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+    y: "10rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+  },
+    onClick: function(){} // Callback after click
+  }).showToast();
 
   const idBoton = e.currentTarget.id;
   const productoAgregado = productosStock.find(producto => producto.id === parseInt(idBoton));
@@ -182,10 +131,11 @@ function agregarAlCarrito(e) {
     productosEnCarrito.push(productoAgregado);
   }
   actualizarNumero();
+
   localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
 }
 function actualizarNumero() {
-    let nuevoNumero = productosEnCarrito.reduce((acc,producto) =>acc + producto.cantidad, 0)
+    let nuevoNumero = productosEnCarrito.reduce((acc,producto) =>acc + producto.cantidad, 0);
     numero.innerText = nuevoNumero;
 }

@@ -168,6 +168,12 @@ P {
 .carrito-vacio,
 .carrito-comprado {
   color: var(--clr-main);
+  display: flex;
+  justify-content: center;
+}
+.carrito-h1{
+  display: flex;
+  justify-content: center;
 }
 
 .carrito-productos {
