@@ -165,6 +165,8 @@ function actualizarBotonesAgregar() {
 
 const productosEnCarrito = [];
 
+const numero= document.querySelector(".numero");
+
 function agregarAlCarrito(e) {
 
   const idBoton = e.currentTarget.id;
@@ -178,6 +180,12 @@ function agregarAlCarrito(e) {
 
     productoAgregado.cantidad = 1;
     productosEnCarrito.push(productoAgregado);
-
   }
+  actualizarNumero();
+  localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+}
+function actualizarNumero() {
+    let nuevoNumero = productosEnCarrito.reduce((acc,producto) =>acc + producto.cantidad, 0)
+    numero.innerText = nuevoNumero;
 }
